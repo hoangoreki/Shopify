@@ -1,27 +1,30 @@
 import { View, Image, Text, StyleSheet } from "react-native";
-
-export default function Intro() {
+import { AntDesign } from '@expo/vector-icons';
+export default function More() {
   return (
     <View style={styles.container}>
       <Text style={styles.textview}>
-        Đưa doanh nghiệp của bạn lên mạng
+        Khám phá thêm các trường hợp khác    
       </Text>
+      <AntDesign name="arrowright" size={20} color="white" />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    padding:25,
+    padding:20,
+    justifyContent: "flex-start",
     backgroundColor: "#004C3F",
     alignItems: "center",
+    width:'100%',
+    flexDirection:'row'
   },
   textview: {
-    flex:1,
     fontWeight: 700,
-    fontSize: 26,
-    alignItems:'center',
-    width:"100%",
+    fontSize: 16,
+    alignItems: "center",
+    marginRight:10,
     color: "#ffffff",
   },
 });

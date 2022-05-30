@@ -13,7 +13,10 @@ import {
 export default function Header({navigation}){
     return(
         <View style={styles.bgHeader}>
-            <Image style={styles.imgview} source={require('../../../assets/shopify.png')} />
+            <View style={{height:50,width:100}}>
+                <Image style={styles.imgview} source={require('../../../assets/shopify.png')} />
+            </View>
+            
             <TouchableOpacity style={styles.textview} onPress={() => navigation.openDrawer()}>
                 <FontAwesome5  name="bars" size={24} color="black" />
             </TouchableOpacity>
@@ -25,16 +28,15 @@ export default function Header({navigation}){
 
 const styles= StyleSheet.create({
     bgHeader:{
-        width:'90%',
+        paddingHorizontal:10,
+        width:'100%',
         height: 50,
         backgroundColor: "#FFFFE0",
         flexDirection: "row",
     },
     imgview:{
-        marginTop:'1%',
-        flex:1,
-        height:55,
-        width:1,
+        height:'100%',
+        width:'100%',
        
     },
     textview:{

@@ -1,10 +1,10 @@
 import { View, Image, Text, StyleSheet } from "react-native";
 
-export default function Intro() {
+export default function Title() {
   return (
     <View style={styles.container}>
       <Text style={styles.textview}>
-        Đưa doanh nghiệp của bạn lên mạng
+        Đưa ra lựa chọn lý tưởng nhất
       </Text>
     </View>
   );
@@ -12,13 +12,13 @@ export default function Intro() {
 
 const styles = StyleSheet.create({
   container: {
-    padding:25,
+    padding:20,
     backgroundColor: "#004C3F",
     alignItems: "center",
+    
   },
   textview: {
-    flex:1,
-    fontWeight: 700,
+    fontWeight: 400,
     fontSize: 26,
     alignItems:'center',
     width:"100%",

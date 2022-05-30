@@ -2,8 +2,8 @@ import { View, Image, Text, StyleSheet, TextInput, Button } from "react-native";
 import { useState } from "react";
 
 export default function EmailInput() {
-  const [text, onChangeText] = useState("");
-  const[isValidEmail,setValidEmail]=useState(true);
+  const [email, setEmail] = useState("");
+  const [isValidEmail, setValidEmail] = useState(true);
 
   const verifyEmail= (email) => {
     let regex = new RegExp(/([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\"\(\[\]!#-[^-~ \t]|(\\[\t -~]))+@([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\[[\t -Z^-~]*])/);
@@ -19,14 +19,17 @@ export default function EmailInput() {
       <View style={styles.inputemail}>
         <TextInput
           placeholder="Nhap dia chi email cua ban"
-          onChangeText={(text)=>{
-            setEmail;
+          onChangeText={(text) => {
             const isvalid = verifyEmail(text);
-            isvalid? setValidEmail(true): setValidEmail(false);
+            isvalid ? setValidEmail(true) : setValidEmail(false);
+            setEmail(text);
           }}
-          value={text}
+          value={email}
           style={styles.inputtxt}
-        ></TextInput>
+        />
+         <Text style={{ fontSize: 20, color: "red" }}>
+        {isValidEmail ? "" : "Email is valid!!"}
+      </Text>
         <View style={styles.btn}>
           <Button
             title="Bat dau dung thu mien phi"
